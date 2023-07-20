@@ -17,6 +17,8 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// import { c03a, c12d } from "./data.js";   !!! cant connect
+
 var c03a= {
     "type": "FeatureCollection",
     "features": [
@@ -753,6 +755,7 @@ var c03a= {
     }
     ]
 };
+
 var geo1= L.geoJSON(c03a);
 geo2=L.geoJSON(c12d);
 
@@ -765,9 +768,7 @@ otherLayers = {
     "12d" : geo2
 }
 
-
 L.control.layers(baseLayer, otherLayers).addTo(map);
-
 
 /*     !!! THE ICON OVERLAPS WITH THE BUTTON   change location !!!!
 var geocoder = L.Control.geocoder({
